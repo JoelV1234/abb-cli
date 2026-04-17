@@ -2,8 +2,14 @@
 
 A command-line tool to search for audiobooks on AudioBook Bay.  
 Browse results in a paginated table, view book details, and grab magnet links.
+> **⚠️ Warning:** This software has currently only been tested on **Linux**. The install scripts behave conditionally and may not work exactly as intended on macOS or Windows.
 
 ## Dependencies
+
+### System (Linux)
+- `libxml2` and `libxslt1.1` (installed automatically by `setup.sh`)
+
+### Python
 
 - **Python 3.8+**
 - `requests` — HTTP requests

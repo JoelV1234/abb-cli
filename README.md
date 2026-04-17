@@ -26,6 +26,15 @@ Browse results in a paginated table, view book details, and grab magnet links.
    ```
    This creates a virtual environment, installs Python dependencies, and makes `run.sh` executable.
 
+## Uninstall
+
+To completely remove ABB-CLI, run from inside the project directory:
+```bash
+chmod +x uninstall.sh
+./uninstall.sh
+```
+This will uninstall the Python dependencies and delete the project folder.
+
 ## Usage
 
 Start the tool:
@@ -66,6 +75,7 @@ Or pass a search directly:
 | `requirements.txt` | Python dependencies |
 | `setup.sh` | One-time setup script |
 | `run.sh` | Launch script |
+| `uninstall.sh` | Removes dependencies and project folder |
 
 ## Known Issues
 

@@ -21,6 +21,7 @@ EOF
 
 # 4. Make the new run.sh executable
 chmod +x run.sh
+chmod +x uninstall.sh
 
 echo "-----------------------------------------------"
 echo "Setup complete. Run ./run.sh to start your app."

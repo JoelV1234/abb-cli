@@ -86,3 +86,9 @@ Or pass a search directly:
 ## Known Issues
 
 - **`c` (copy) command does not work** — The copy-to-clipboard feature uses OSC52 escape sequences, which are not supported by all terminal emulators. Use `m` to display the magnet link and copy it manually instead.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+Authored by **Joel Vaz**.

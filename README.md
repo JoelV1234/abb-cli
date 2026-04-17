@@ -10,7 +10,6 @@ Browse results in a paginated table, view book details, and grab magnet links.
 - `lxml` — HTML parsing
 - `cssselect` — CSS selector support for lxml
 - `rich` — styled terminal tables and panels
-- `xclip` — clipboard support (system package, optional)
 
 ## Installation
 
@@ -26,11 +25,6 @@ Browse results in a paginated table, view book details, and grab magnet links.
    ./setup.sh
    ```
    This creates a virtual environment, installs Python dependencies, and makes `run.sh` executable.
-
-3. *(Optional)* Install xclip for the copy-to-clipboard feature:
-   ```bash
-   sudo apt install xclip
-   ```
 
 ## Usage
 
@@ -55,7 +49,7 @@ Or pass a search directly:
 | `page <N>` | Jump to page N |
 | `tr` | Redisplay the current results table |
 | `m` | Fetch and display the magnet link |
-| `c` | Fetch (if needed) and copy the magnet link to clipboard |
+| `c` | ⚠️ **Not working** — Copy magnet link to clipboard (uses OSC52) |
 | `r` | Start a new search |
 | `/t <query>` | New title search |
 | `/a <query>` | New author search |
@@ -72,3 +66,7 @@ Or pass a search directly:
 | `requirements.txt` | Python dependencies |
 | `setup.sh` | One-time setup script |
 | `run.sh` | Launch script |
+
+## Known Issues
+
+- **`c` (copy) command does not work** — The copy-to-clipboard feature uses OSC52 escape sequences, which are not supported by all terminal emulators. Use `m` to display the magnet link and copy it manually instead.

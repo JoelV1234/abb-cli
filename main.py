@@ -1,5 +1,6 @@
 import sys
-import subprocess
+import os
+import base64
 from scraper import search_books, get_magnet_link
 from display import (
     display_results,
@@ -172,23 +173,10 @@ def interactive_loop(query, search_type, page=1):
                         else:
                             display_error("No detail URL for this book.")
                             continue
-                    try:
-                        subprocess.run(
-                            ["xclip", "-selection", "clipboard"],
-                            input=last_magnet.encode(),
-                            check=True,
-                        )
-                        console.print("[bold green]Magnet link copied to clipboard![/bold green]")
-                    except FileNotFoundError:
-                        try:
-                            subprocess.run(
-                                ["xsel", "--clipboard", "--input"],
-                                input=last_magnet.encode(),
-                                check=True,
-                            )
-                            console.print("[bold green]Magnet link copied to clipboard![/bold green]")
-                        except FileNotFoundError:
-                            display_error("Install xclip or xsel to copy to clipboard.")
+                    encoded = base64.b64encode(last_magnet.encode()).decode().replace("\n", "")
+                    osc = f"\x1b]52;c;{encoded}\x07"
+                    os.write(1, osc.encode())
+                    console.print("[bold green]Magnet link copied to clipboard![/bold green]")
                 continue
 
             # Select book by number

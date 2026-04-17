@@ -89,6 +89,6 @@ Or pass a search directly:
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE.txt).
 
 Authored by **Joel Vaz**.

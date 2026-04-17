@@ -31,5 +31,12 @@ EOF
 # 5. Make the new run.sh executable
 chmod +x run.sh
 
+# 6. Configure Ctrl+P bind
+echo "Setting up Ctrl+P paste shortcut in ~/.bashrc..."
+if ! grep -q "pi_clipboard" ~/.bashrc; then
+    echo 'bind '\''"\C-p": "$(cat /dev/shm/pi_clipboard)\e\C-e"'\''' >> ~/.bashrc
+    echo "Shortcut added. After setup, you may need to run 'source ~/.bashrc' or restart your terminal."
+fi
+
 echo "-----------------------------------------------"
 echo "Setup complete. Run ./run.sh to start your app."

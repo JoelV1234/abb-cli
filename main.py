@@ -173,10 +173,9 @@ def interactive_loop(query, search_type, page=1):
                         else:
                             display_error("No detail URL for this book.")
                             continue
-                    encoded = base64.b64encode(last_magnet.encode()).decode().replace("\n", "")
-                    osc = f"\x1b]52;c;{encoded}\x07"
-                    os.write(1, osc.encode())
-                    console.print("[bold green]Magnet link copied to clipboard![/bold green]")
+                    with open("/dev/shm/pi_clipboard", "w") as f:
+                        f.write(last_magnet)
+                    console.print("[bold green]Magnet link saved! Quit the app and press [cyan]Ctrl+P[/cyan] in your terminal to paste.[/bold green]")
                 continue
 
             # Select book by number

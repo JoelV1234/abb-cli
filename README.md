@@ -1,4 +1,4 @@
-# ABB-CLI — AudioBook Bay Search Tool
+# ABB-CLI — AudioBook Bay CLI Search Tool
 
 A command-line tool to search for audiobooks on AudioBook Bay.  
 Browse results in a paginated table, view book details, and grab magnet links.

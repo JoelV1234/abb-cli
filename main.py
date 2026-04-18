@@ -174,8 +174,9 @@ def interactive_loop(query, search_type, page=1):
                             display_error("No detail URL for this book.")
                             continue
                     with open("/dev/shm/pi_clipboard", "w") as f:
+                        print(last_magnet)
                         f.write(last_magnet)
-                    console.print("[bold green]Magnet link saved! Quit the app and press [cyan]Ctrl+P[/cyan] in your terminal to paste.[/bold green]")
+                    console.print("[bold green]Magnet link saved! Quit the app and press [cyan]Ctrl+V[/cyan] in your terminal to paste.[/bold green]")
                 continue
 
             # Select book by number
